@@ -1,0 +1,19 @@
+.lj-pagination {
+  margin: 0 auto;
+  width: 980px;
+  color: #333;
+  text-align: center;
+}
+.lj-pagination li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.lj-pagination li.active a {
+  background-color: #d75054;
+  color: #fff;
+}
+.lj-pagination li a {
+  display: block;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
