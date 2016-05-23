@@ -1,0 +1,6 @@
+body {
+  background-color: #efefef;
+}
+#example .navbar {
+  min-height: 0;
+}

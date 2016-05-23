@@ -1,2 +1,0 @@
-# qiuliijun.com
-personal website

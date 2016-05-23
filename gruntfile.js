@@ -1,40 +1,39 @@
-
 module.exports = function(grunt) {
 
 	require('load-grunt-tasks')(grunt);
 
 	var config = {
-		static: 'static',
-		public: 'public'
-	};
+		'version': '1.0.0',
+		'port': 2016,
+		'to' : 'dist/',
+		'from' : 'src/'
+	}
 
 	grunt.initConfig({
-		config: config,
 
-		copy: {
-			script: {
-				files:[{
-					expand:true,
-					cwd:'./static/js/',
-					src:'{,*/}*.js',
-					dest:'./public/js/',
-					ext:'.js'
-				}]
-			},
-			bin: {
-				files:[{
-					expand:true,
-					cwd:'./bower_components/',
-					src:'**/*.js',
-					dest:'./public/bin/',
-					ext:'.js'
-				}]
+		clean: {
+			common: {
+				src:[config.to + '{css,img,js}/*']
 			}
 		},
 
-		clean: {
-			dist: {
-				src: ['<%= config.public %>/**/*']
+		copy:{
+			script: {
+				files:[{
+					expand: true,
+					cwd: config.from + 'js',
+					src: '{,*/}*.js',
+					dest: config.to + 'js',
+					ext: '.js'
+				}]
+			},
+			image: {
+				files:[{
+					expand:true,
+					cwd: config.from + 'img',
+					src:'**',
+					dest: config.to + 'img',
+				}]
 			}
 		},
 
@@ -42,35 +41,59 @@ module.exports = function(grunt) {
 			dist: {
 				files:[{
 					expand:true,
-					cwd:'./static/css/',
+					cwd: config.from + 'less',
 					src:'{,*/}*.less',
-					dest:'./public/css/',
+					dest: config.to + 'css',
 					ext:'.css'
 				}]
 			}
 		},
 
+		connect: {
+			options: {
+				port: config.port,
+				livereload: 43998
+			},
+	    server: {
+	      options: {
+	        open:true,
+	        hostname: '*',
+	        base: config.to
+	      }
+	    }
+		},
+
 		express: {
-			dist: {
+			dev: {
 				options: {
-					port:3000,
-					script:'./app.js'
+					script: 'app.js'
 				}
 			}
 		},
 
 		watch: {
-			dist: {
-				files: ['static/css/{,*/}*.less'],
+			style: {
+				files: [ config.from + 'less/{,*/}*.less'],
 				tasks: ['newer:less:dist']
 			},
 			script: {
-				files: ['static/js/{,*/}*.js'],
+				files: [ config.from + 'js/{,*/}*.js'],
 				tasks: ['newer:copy:script']
+			},
+			copyImage: {
+				files: [ config.from + 'img/**'],
+				tasks: ['copy:image']
 			}
+			// ,
+			// livereload: {
+   //      options: {
+   //        livereload: '<%= connect.options.livereload %>'
+   //      },
+   //      files:[config.to + '{,*/}*']
+   //    }
 		}
-
 	});
 
-	grunt.registerTask('default', ['copy:bin', 'less', 'express', 'watch']);
+	grunt.registerTask('default', ['clean', 'copy', 'less', 'express', 'watch']);
+
 }

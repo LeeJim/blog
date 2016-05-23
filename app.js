@@ -1,29 +1,32 @@
-var express = require('express')
-var bodyParser = require('body-parser')
+const express = require('express')
+const app = express()
+const webshot = require('webshot')
 
-var app = express()
+app.listen(2015, () => {
+  console.log('express start on 2015');
+})
 
-app.set('views', './views')
-app.set('view engine','jade')
+app.use( express.static('dist') )
 
-app.use(express.static('public'))
-// 解析post的数据
-app.use(bodyParser.urlencoded({
-  extended: true
-}))
+app.get('/', (req, res)=> {
+  res.sendFile('index.html');
+})
 
+app.get('/shot', (req, res) => {
+  var options = {
+    screenSize: {
+      width: 320
+    , height: 480
+    }
+  , shotSize: {
+      width: 320
+    , height: 'all'
+    }
+  , userAgent: 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_2 like Mac OS X; en-us)'
+      + ' AppleWebKit/531.21.20 (KHTML, like Gecko) Mobile/7B298g'
+  };
 
-// 路由Route
-var sharePlanRouter = require('./route/sharePlan'),
-    labRouter = require('./route/lab'),
-    testRouter = require('./route/test');
-
-app.use('/shareplan', sharePlanRouter)
-app.use('/lab', labRouter)
-app.use('/test', testRouter)
-
-
-// 端口port
-app.listen(3000, function() {
-	console.log('app is listen to 3000!');
+  webshot('flickr.com', 'flickr.jpeg', options, function(err) {
+    // screenshot now saved to flickr.jpeg
+  });
 })
