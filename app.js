@@ -1,32 +1,63 @@
-const express = require('express')
-const app = express()
-const webshot = require('webshot')
+var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
-app.listen(2015, () => {
-  console.log('express start on 2015');
-})
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var backbone = require('./routes/backbone');
 
-app.use( express.static('dist') )
+var app = express();
 
-app.get('/', (req, res)=> {
-  res.sendFile('index.html');
-})
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
-app.get('/shot', (req, res) => {
-  var options = {
-    screenSize: {
-      width: 320
-    , height: 480
-    }
-  , shotSize: {
-      width: 320
-    , height: 'all'
-    }
-  , userAgent: 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_2 like Mac OS X; en-us)'
-      + ' AppleWebKit/531.21.20 (KHTML, like Gecko) Mobile/7B298g'
-  };
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
-  webshot('flickr.com', 'flickr.jpeg', options, function(err) {
-    // screenshot now saved to flickr.jpeg
+app.use('/', routes);
+app.use('/users', users);
+
+app.use('/backbone', backbone);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+// error handlers
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
+    });
   });
-})
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
+});
+
+
+module.exports = app;
