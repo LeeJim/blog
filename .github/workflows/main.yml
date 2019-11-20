@@ -13,6 +13,10 @@ jobs:
       run:  |
         npm install hexo hexo-deployer-git -g
         npm install
-        git config --global user.name "leejimqiu"
-        git config --global user.email "2737435522qq.com"
-        hexo g -d
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: public
+        BUILD_SCRIPT: hexo g
