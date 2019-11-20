@@ -5,8 +5,14 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
     - name: Deploy
-      uses: leejim/action-hexo@master
-      env:
-        EMAIL: 273743552@qq.com
-        NAME: leejimqiu
+      run:
+        - npm install hexo hexo-git-deploy -g
+        - npm install
+        - git config --global user.name "leejimqiu"
+        - git config --global user.email "2737435522qq.com"
+        - hexo g -d
