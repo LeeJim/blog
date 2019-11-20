@@ -9,14 +9,10 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - name: Deploy
-      run:  |
-        npm install hexo hexo-deployer-git -g
-        npm install
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
         FOLDER: public
-        BUILD_SCRIPT: hexo g
+        BUILD_SCRIPT: npm install && hexo g
