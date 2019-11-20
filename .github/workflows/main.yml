@@ -10,9 +10,9 @@ jobs:
       with:
         node-version: '12.x'
     - name: Deploy
-      run:
-        - npm install hexo hexo-git-deploy -g
-        - npm install
-        - git config --global user.name "leejimqiu"
-        - git config --global user.email "2737435522qq.com"
-        - hexo g -d
+      run:  |
+        npm install hexo hexo-git-deploy -g
+        npm install
+        git config --global user.name "leejimqiu"
+        git config --global user.email "2737435522qq.com"
+        hexo g -d
