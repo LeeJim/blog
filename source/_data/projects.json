@@ -1,0 +1,27 @@
+[
+  {
+    "name": "tub.js",
+    "url": "https://github.com/LeeJim/tub.js",
+    "desc": "a simple JavaScript Alert/Notification plugin"
+  },
+  {
+    "name": "xLoad",
+    "url": "https://github.com/LeeJim/xLoad",
+    "desc": "a simple scroll load plugin"
+  },
+  {
+    "name": "favweb",
+    "url": "http://favweb.cn",
+    "desc": "一个以分享有趣网站为宗旨的网站，带你探索整个互联网"
+  },
+  {
+    "name": "时间寄存器",
+    "url": "https://minapp.com/miniapp/3437",
+    "desc": "微信小程序，第三方时间管理程序。"
+  },
+  {
+    "name": "Jeep-UI",
+    "url": "http://jui.qiulijun.com",
+    "desc": "基于Vue.js 2.0的UI库"
+  }
+]
