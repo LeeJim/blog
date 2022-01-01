@@ -231,7 +231,7 @@ widgets:
         # Author's current location
         location: Shenzhen, China
         # URL or path to the avatar image
-        avatar: https://avatars.githubusercontent.com/u/7017290?v=4·
+        avatar: https://wx.qlogo.cn/mmhead/PiajxSqBRaEKzztxtaqGaVk8KzgrnxCBJkB6RD6rEqGOicBLVhnzxM7g/0
         # Whether show the rounded avatar image
         avatar_rounded: true
         # Email address for the Gravatar
