@@ -305,9 +305,9 @@ widgets:
         position: left
         type: adsense
         # AdSense client ID
-        client_id: 'ca-pub-1025815014998235'
+        client_id: ''
         # AdSense AD unit ID
-        slot_id: '1025815014998235'
+        slot_id: ''
     # Follow.it email subscription widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
@@ -330,7 +330,7 @@ plugins:
     # https://tongji.baidu.com
     baidu_analytics:
         # Baidu Analytics tracking ID
-        tracking_id: 
+        tracking_id: 6638f74329d0f52c5cdafdadb58010af
     # Bing Webmaster Tools plugin settings
     # https://www.bing.com/toolbox/webmaster/
     bing_webmaster:
