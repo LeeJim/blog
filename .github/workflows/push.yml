@@ -3,7 +3,7 @@ on: [push] # push 代码时触发
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Tencent Cloudbase Github Action Example
+    name: Deploy Hexo Blog
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
         run: |
           npm i
           npm install hexo-theme-icarus
-          hexo config theme icarus
+          npx hexo config theme icarus
           npm run build
       # 使用云开发 Github Action 部署
       - name: Deploy static to Tencent CloudBase
