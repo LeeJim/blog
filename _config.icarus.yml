@@ -129,6 +129,8 @@ footer:
         Download on GitHub:
             icon: fab fa-github
             url: 'https://github.com/leejim'
+        粤ICP备19015289号:
+            url: 'https://beian.miit.gov.cn'
 # Article related configurations
 article:
     # Code highlight settings
