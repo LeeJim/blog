@@ -4,17 +4,22 @@ date: 2017-5-19 20:40:03
 tags: 
 - vue.js
 desc: summary of vuejs
+toc: true
+categories:
+- [框架, Vue.js]
 ---
 
 其实很多框架发展到后面，都是非常类似的。以前写过React，所以对Vue.js还是能比较快速地上手的。
 
 期间，遇到了不少问题，整理了一下，就和大家分享一下阁下小小的见解。
 
+<!-- more -->
+
 ## input
 
 type类型的选择
 
-### 初始版本：
+### 初始版本
 
 ```vue
 <template v-if="type === 'number'">
@@ -30,7 +35,7 @@ type类型的选择
 
 原因：避免使用非法类型
 
-### 最终版本：
+### 最终版本
 
 ```vue
 <input :type="type"/>
@@ -52,11 +57,11 @@ export default {
 
 ### 同步校验与异步校验
 
-#### 同步校验：
+#### 同步校验
 
 input事件触发的时候，实时校验然后输出错误信息，blur事件触发的时候展示错误信息。
 
-#### 异步校验：
+#### 异步校验
 
 因为存在HTTP延迟，所以不能实时触发，就在同步校验成功之后才触发。
 
@@ -133,15 +138,15 @@ export default {
 
 ## 数据流动问题
 
-### 情况：
+### 情况
 
 一个父元素，一个子元素。父元素传递parentError给子元素，子元素自己也可以产生childError
 
-### 问题：
+### 问题
 
 父元素传递'first error'，子元素自产生'second error'，此时父再传'first error'，子元素就会忽略，因为父元素传递的数据还没改变还是'first error'。
 
-### 解决：
+### 解决
 
 A方法：子元素不自己产生childError，统一`$emit`发送给父元素，然后才传递给子元素
 

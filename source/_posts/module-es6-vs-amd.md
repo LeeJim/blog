@@ -1,10 +1,12 @@
 ---
-title: 模块化 CommonJS VS ES6 Module
+title: JavaScript 模块(module)的差异
 date: 2016-11-4 17:46:21
 tags:
 - ES6
 - 模块化
 desc:
+categories:
+- [前端, 基础]
 ---
 
 以下ES5方式代表的是Node.js采用的CMD，ES6方式代表的是ES6提供的模块化定义

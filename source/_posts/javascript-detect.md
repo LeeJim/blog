@@ -1,10 +1,13 @@
 ---
-title: 总结JavaScript的检测方式
+title: 总结 JavaScript 的检测方式
 date: 2016-11-15 20:32:12
 tags:
 desc:
 - JavaScript
 - detect
+toc: true
+categories:
+- [前端, 基础]
 ---
 
 在JavaScript开发当中，因为涉及到跨平台的兼容性问题，我们常常需要去检测一些方法或者属性是否存在，如果不存在而我们贸然使用的话，就是报错导致程序无法继续运行，而用户则会不知所措。

@@ -5,6 +5,9 @@ tags:
 - JavaScript
 - 闭包
 desc: js闭包
+toc: true
+categories:
+- [前端, 基础]
 ---
 
 闭包是JavaScript的一种特性，而不是函数。

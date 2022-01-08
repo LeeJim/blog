@@ -5,9 +5,15 @@ tags:
 - JavaScript
 - underscore.js
 desc: 理解underscore.js v1.8.3 源码解析
+toc: true
+categories:
+- 源码解析
+- underscore
 ---
 
 这篇文章就分析一些我觉得很常用，也很有趣的一些函数。很早以前就听过`underscore`的大名，但是很少去用到。通过这次阅读源码，发来了不少有趣的函数，也学习到了许多技巧，真实收益匪浅。
+
+<!-- more -->
 
 
 ### _.sample

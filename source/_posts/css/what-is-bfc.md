@@ -5,9 +5,10 @@ tags:
 - CSS
 - BFC
 desc: bfc, clear float
+toc: true
+categories:
+- CSS
 ---
-
-# BFC
 
 BFC (Block Formatting Context) **块级格式化上下文**，在W3C上是这么定义的：
 
@@ -15,6 +16,8 @@ BFC (Block Formatting Context) **块级格式化上下文**，在W3C上是这么
 In a block formatting context, boxes are laid out one after the other, vertically, beginning at the top of a containing block. The vertical distance between two sibling boxes is determined by the 'margin' properties. Vertical margins between adjacent block-level boxes in a block formatting context collapse.  
 In a block formatting context, each box's left outer edge touches the left edge of the containing block (for right-to-left formatting, right edges touch). This is true even in the presence of floats (although a box's line boxes may shrink due to the floats), unless the box establishes a new block formatting context (in which case the box itself may become narrower due to the floats).  
 For information about page breaks in paged media, please consult the section on allowed page breaks.
+
+<!-- more -->
 
 ## BFC效果
 
@@ -50,7 +53,7 @@ For information about page breaks in paged media, please consult the section on 
 
 - 消除浮动
 
-## 参考：
+## 参考
 
 - [CSS之BFC详解](http://www.html-js.com/article/1866)
 - [W3C block-formatting](https://www.w3.org/TR/CSS2/visuren.html#block-formatting)

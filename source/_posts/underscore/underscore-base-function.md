@@ -5,6 +5,10 @@ tags:
 - JavaScript
 - underscore.js
 desc: 理解underscore.js v1.8.3 源码解析
+toc: true
+categories:
+- 源码解析
+- underscore
 ---
 
 从`_.each`函数入手，理解`underscore.js`的基础函数，`_.each`的调用盏可以参考如下思维导图：
@@ -12,6 +16,8 @@ desc: 理解underscore.js v1.8.3 源码解析
 ![image](http://7xnh42.com1.z0.glb.clouddn.com/each.jpg)
 
 `underscore.js`的很多方法都是基于函数的，因此对于用户传入的回调函数都是需要处理的，`_.each`也不例外。因此先来介绍内置的`cb`函数还有`optimizeCb`函数
+
+<!-- more -->
 
 ### cb
 

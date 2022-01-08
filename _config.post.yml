@@ -1,0 +1,10 @@
+sidebar:
+  right:
+    sticky: true
+widgets:
+  -
+    position: right
+    type: toc
+    index: true
+    collapsed: true
+    depth: 3

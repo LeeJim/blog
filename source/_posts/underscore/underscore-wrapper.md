@@ -5,6 +5,10 @@ tags:
 - JavaScript
 - underscore.js
 desc: 理解underscore.js v1.8.3 源码解析
+toc: true
+categories:
+- 源码解析
+- underscore
 ---
 
 # 前言
@@ -12,6 +16,8 @@ desc: 理解underscore.js v1.8.3 源码解析
 其实每个JavaScript库的外包装都大同小异，读懂一个就差不多能读懂其他的了。
 
 另外提醒，此文对应的`underscore.js`版本是`v1.8.3`
+
+<!-- more -->
 
 ## 正文
 

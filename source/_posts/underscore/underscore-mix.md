@@ -5,6 +5,10 @@ tags:
 - JavaScript
 - underscore.js
 desc: 理解underscore.js v1.8.3 源码解析
+toc: true
+categories:
+- 源码解析
+- underscore
 ---
 
 这一篇文章，就写一些零散的（我所理解的）知识点，感觉`underscore.js`许多细节值得好好深究一下。就像一篇好文章一样，经典的书籍值得重复地去品味，所谓书读百遍其义自现。

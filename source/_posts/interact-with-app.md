@@ -1,8 +1,11 @@
 ---
-title: web与APP的交互
+title: Web 与原生应用的常见通信方式
 date: 2016-09-26 18:08:19
 tags: 
 desc: web与APP的交互,web,iOS,Andriod,addJavascriptInterface,WebViewJavascriptBridge,初始化分支
+toc: true
+categories:
+- [前端, 基础]
 ---
 
 在移动`web`开发过程中，一定会遇到`web`端与`APP`端交互的情况。下面就来分析下，`web`端到底是如何与`APP`端实现交互的。
@@ -206,7 +209,7 @@ if(inAPP) {
 
 如果你有更好的做法，希望你可以在下方给大家分享一下。谢谢。
 
-### 参考：
+### 参考
 
 > [JS与WebView交互存在的一些问题](http://www.jianshu.com/p/93cea79a2443)
 

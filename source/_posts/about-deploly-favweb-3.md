@@ -3,9 +3,14 @@ title: 从零开始，部署一个Web应用（三）Vue.js & Redis
 date: 2017-10-27 18:37:14
 tags: vue.js
 desc: for beginner, how to build an web application
+toc: true
+categories:
+- 工程实践
 ---
 
 这篇文章，就总结一些`Vue.js`和`Redis`遇到的问题。
+
+<!-- more -->
 
 # Vue.js
 

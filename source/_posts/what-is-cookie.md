@@ -3,11 +3,16 @@ title: 什么是cookie
 date: 2017-11-05 18:43:13
 tags: cookie
 desc: 什么是cookie
+toc: true
+categories:
+- 计算机网络
 ---
 
 起源，因为HTTP的无状态，无法知道两个请求是来自同个人。
 
 由NetScape工程师Lou Montulli与1994发表。正式确定于[RFC2109](http://tools.ietf.org/html/rfc2109)，最终演变成[RFC2965](http://tools.ietf.org/html/rfc2965)
+
+<!-- more -->
 
 ## Cookie为何物？
 

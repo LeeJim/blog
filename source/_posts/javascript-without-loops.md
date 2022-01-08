@@ -1,10 +1,13 @@
 ---
-title: 正确使用JavaScript数组
+title: 正确使用 JavaScript 数组
 date: 2017-02-21 00:08:29
 tags:
 - JavaScript
 - Array
-desc:
+desc: JS数组进阶使用
+toc: true
+categories:
+- [前端, 基础]
 ---
 
 

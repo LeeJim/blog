@@ -5,6 +5,10 @@ tags:
 - JavaScript
 - Storage
 desc: localStorage的使用与分析
+toc: true
+categories:
+- [前端, 基础]
+- 浏览器
 ---
 
 其实这是很简单的一个API。但这个API也存在不少问题可以深究一下。

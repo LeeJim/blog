@@ -3,6 +3,9 @@ title: 多版本Node.js
 date: 2016-11-03 17:06:19
 tags: Node.js
 desc: Windows下安装多版本的Node.js
+toc: true
+categories:
+- Node.js
 ---
 
 最近，Node.js的LTS版本已经升级到6.9.1了，最新的版本都已经出到7.0了。

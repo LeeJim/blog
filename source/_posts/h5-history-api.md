@@ -1,8 +1,12 @@
 ---
-title: 操作浏览器历史 HTML5 History API
+title: HTML5 History API
 date: 2016-07-05 21:16:18
 tags: History API
 desc: html5,history api,历史API,操作历史记录
+toc: true
+categories:
+- [前端, 基础]
+- 浏览器
 ---
 
 在`DOM`中，`window`对象中有一个`history`的对象可以用来访问浏览器的历史记录，在`HTML5`中，更可以通过它来操作历史记录

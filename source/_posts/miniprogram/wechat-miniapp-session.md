@@ -1,10 +1,13 @@
 ---
-title: 小程序开发总结（session部分）
+title: 小程序 Session
 date: 2017-07-18 23:26:51
 tags:
 - 小程序
 - Session
 desc:
+toc: true
+categories:
+- 小程序
 ---
 
 最近刚完成了一项小程序的开发任务。彻彻底底地从零开始，其中遇到了不少坑要填，因此来总结一下，希望能帮助到其他人，避免重复踩坑。

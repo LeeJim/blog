@@ -3,9 +3,14 @@ title: 从零开始，部署一个Web应用（一）
 date: 2017-10-14 20:37:14
 tags: vue.js
 desc: for beginner, how to build an web application
+toc: true
+categories:
+- 工程实践
 ---
 
-起始篇，先介绍一个整个系列文章涉及到的开发环境，技术盏。
+起始篇，先介绍一个整个系列文章涉及到的开发环境，技术栈。
+
+<!-- more -->
 
 ## 环境
 

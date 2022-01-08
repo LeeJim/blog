@@ -2,6 +2,10 @@
 title: 全局变量的管理
 tags: 小程序
 desc: 小程序的全局变量要如何管理
+date: 2020-4-7
+toc: true
+categories:
+- 小程序
 ---
 
 ## 前言
@@ -16,6 +20,8 @@ desc: 小程序的全局变量要如何管理
 微信团队将`window`设置成了`writable:false`，且值也为`undefined`。
 
 即我们无法像在`web`那样任意声明全局变量。但微信团队提供了其他的全局变量，比如常用的`wx`、`global`。
+
+<!-- more -->
 
 ## 问题
 

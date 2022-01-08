@@ -6,6 +6,9 @@ tags:
 - Buffers
 desc: 
 from: https://docs.nodejitsu.com/articles/advanced/buffers/how-to-use-buffers/
+toc: true
+categories:
+- Node.js
 ---
 
 # 为什么要有Buffers？
@@ -15,6 +18,8 @@ from: https://docs.nodejitsu.com/articles/advanced/buffers/how-to-use-buffers/
 其实，要解决这个问题直接使用字符串也是可以的，这也是Node.js一开始的做法。然而，这样的做法有许多问题，也很慢。
 
 所以，记住了，别使用二进制字符串(binary strings)，用**buffers**代替它！
+
+<!-- more -->
 
 # 什么是Buffers？
 

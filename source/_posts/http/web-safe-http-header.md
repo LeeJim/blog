@@ -1,10 +1,13 @@
 ---
-title: web安全相关-HTTP头部
+title: HTTP 常用安全头
 date: 2016-05-9 21:02:49
 tags:
 - 网络安全
 - HTTP
 desc: web safe,web安全,网络安全,http,http安全头部
+toc: true
+categories:
+- 计算机网络
 ---
 
 Security - Elephant in the room，指显而易见而又被忽略的事实。用这个短语形容`web`安全，不能更生动形象。最近项目涉及到一些`web`安全的东西，就来总结一下相关的HTTP安全头部。

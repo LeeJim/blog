@@ -1,9 +1,12 @@
 ---
-title: 使用HTML发送邮件
+title: 使用 HTML 发送邮件
 date: 2016-09-12 12:25:25
 tags:
 - HTML
 desc: HTML发邮件,使用mailto协议
+toc: true
+categories:
+- [前端, 基础]
 ---
 
 最近项目上的需求是在`HTML`上直接调用系统的邮件系统发邮件，并添加收件人，标题等信息。看似简单，其实开发过程中也遇到了一些问题，现在来总结一下。

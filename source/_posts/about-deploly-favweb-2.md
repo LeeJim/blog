@@ -3,9 +3,14 @@ title: 从零开始，部署一个Web应用（二）MongoDB & nginx
 date: 2017-10-21 21:37:14
 tags: vue.js
 desc: for beginner, how to build an web application
+toc: true
+categories:
+- 工程实践
 ---
 
 这篇文章，就总结一些部署`MongoDB`和`nginx`遇到的问题。
+
+<!-- more -->
 
 # MongoDB
 

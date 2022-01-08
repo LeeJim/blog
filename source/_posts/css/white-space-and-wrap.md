@@ -1,9 +1,12 @@
 ---
-title: CSS空格和换行
+title: CSS 空格和换行
 date: 2015-10-14 14:25:19
 tags:
 - CSS
 desc: CSS空格和换行,word-break,overflow-wrap,word-wrap,white-space
+toc: true
+categories:
+- CSS
 ---
 
 在WEB开发当中，往往容易忽略文本样式的控制，关注点常常停留在元素上。最近开发涉及到文本的样式，发现对应的属性的值都挺多的，因此来总结记录一下，以后给自己做参考。

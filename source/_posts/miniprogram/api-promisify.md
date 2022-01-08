@@ -1,7 +1,12 @@
 ---
 title: API Promise化
-tags: 小程序
+tags: 
+- 小程序
 desc: 小程序如何将异步调用转成Promise调用
+toc: true
+categories:
+- 小程序
+date: 2020-4-1
 ---
 
 ## 前言
@@ -9,6 +14,8 @@ desc: 小程序如何将异步调用转成Promise调用
 众所周知，前端一大坑就是回调函数。
 
 相信很多人是从`async/await`的温柔乡，掉到小程序重新写回调的大坑里的。
+
+<!-- more -->
 
 由于开发者工具新增了 [增强编译](https://developers.weixin.qq.com/miniprogram/dev/devtools/codecompile.html) 从而原生支持了`async\await`，避免了我们仍需通过webpack等第三方打包工具实现。因此我们需要做的就是将官方API的 **异步调用** 方式改成 **Promise的方式** 即可。
 

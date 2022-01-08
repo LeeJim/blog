@@ -1,9 +1,12 @@
 ---
-title: 开始拥抱gulp
+title: 开始拥抱 Gulp
 date: 2016-09-23 12:17:53
 tags: gulp
 desc: getting-started-with-gulp,gulp,grunt,gulpfile,gruntfile
 from: https://markgoodyear.com/2014/01/getting-started-with-gulp/
+toc: true
+categories:
+- 前端工程化
 ---
 
 前端工作流中常用的构建工具除了`grunt`，还有一个`gulp`(当然现在还有`webpack`)。`gulp`是一个直观的，执行代码覆盖配置(code-over-configuration)的，基于`nodejs`流的构建工具，而且执行很快。

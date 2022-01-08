@@ -1,8 +1,11 @@
 ---
-title: 前端进阶 - Promise原理&宏微任务
+title: Promise 原理 & 宏微任务
 date: 2021-01-17 14:59:13
-tags: promise 宏任务 微任务
----
+tags: 
+- promise
+toc: true
+categories:
+- [前端, 进阶]
 ---
 
 读完这篇文章，你的收获有：
@@ -11,7 +14,9 @@ tags: promise 宏任务 微任务
 3. 可以手写符合标准的Promise
 4. 可以解答任意宏任务/微任务的题目
 
-# 0. 前言
+<!-- more -->
+
+# 前言
 
 为什么写这篇文章？
 
@@ -23,15 +28,15 @@ JavaScript是异步语言，因此Promise的重要性不言而喻。
 
 由于能力有限，文中可能存在错误，望广大网友指正。
 
-# 1. Promise简史
+# Promise 简史
 
-Promise并不是一个新鲜的概念，早在2011年就出现在社区里了，目的是为了解决著名的回调地狱问题。
+Promise 并不是一个新鲜的概念，早在2011年就出现在社区里了，目的是为了解决著名的回调地狱问题。
 
 这个概念是在JQuery Deferred Objects出现之后，开始流行的。并于2012年，Promise被提出作为规范：[Promise/A+](https://promisesaplus.com)。
 
 在成为ES6标准之前，社区里也出现了许多符合Promise标准的库，如bluebird、q、when等等。
 
-# 2. Promise的关键概念
+# Promise 的关键概念
 
 > “The Promise object is used for deferred and asynchronous computations. A Promise represents an operation that hasn’t completed yet, but is expected in the future.” — MDN Promise Reference
 
@@ -39,7 +44,7 @@ Promise的基础认知，推荐看阮一峰的[《ES6 入门教程》](https://e
 
 本文的重点是讲解一些手写Promise需要关注的关键概念。
 
-## 2.1 Promise有三个状态：
+## Promise 有三个状态：
 
 - pending
 - resolved
@@ -59,7 +64,7 @@ Promise的基础认知，推荐看阮一峰的[《ES6 入门教程》](https://e
 
 状态流转成rejected时，则需要用一个reason来作为当前Promise被reject的理由，和resolved时同理。
 
-## 2.2 Promise.prototype.then
+## Promise.prototype.then
 
 ```js
 promise.then(onFulfilled, onRejected)
@@ -71,7 +76,7 @@ promise.then(onFulfilled, onRejected)
 - 每次调用then均返回一个全新的Promise实例，这样就可以链式调用
 - then会在当前宏任务下形成一个微任务（具体介绍看下面）
 
-### 2.2.1 promise的状态
+### Promise 的状态
 
 then其实和Promise的构造函数是类似的，返回值都是一个新的Promise实例。
 
@@ -120,7 +125,7 @@ let p3 = p2.then(undefined, reason => 1) // Promise {<fulfilled>: 1}
 
 而此时`p3`刚好有`onRejected`的函数，也能正确处理，最后的返回值则是自己的value，因此`p3`的状态是`fulfilled`的。
 
-### 2.2.2 promise的返回值
+### Promise 的返回值
 
 前文也提到，promise的返回值可以是任意合法的JavaScript值，包括了`promise`，这里重点讲下。
 
@@ -140,7 +145,7 @@ let p2 = new Promise(() => p1)
 
 而`p2`的返回值是`p1`，因此`p2`在1000ms之内也是`<pending>`，同样会在1000ms之后，变成`<fulfilled: 1>`
 
-## 2.3 Promise.prototype.catch
+## Promise.prototype.catch
 
 虽然catch不是Promise/A+标准的方法，但是也需要提一下，因为这也是常用的方法之一。
 
@@ -150,7 +155,7 @@ let p2 = new Promise(() => p1)
 promise.catch(function onRejected() {}) == promise.then(undefined, function onRejected() {})
 ```
 
-## 2.4 微任务 microtask
+## 微任务 microtask
 
 当前promise的状态变更之后，不是立即执行then方法的。此时引入了 **微任务(microtask)** 的概念。
 
@@ -166,7 +171,7 @@ promise.catch(function onRejected() {}) == promise.then(undefined, function onRe
 
 > 由于微任务的机制是引擎提供的，因此手写Promise的时候，可以用setTimeout来代替。
 
-### 2.4.1 解析任务
+### 解析任务
 
 分析代码的时候，可以这样分几步走：
 
@@ -221,7 +226,7 @@ setTimeout(console.log, 0, 5)
 
 其实，还有`async/await`相关的题目，如果阅读足够多的话，我再完善吧。
 
-# 3. 手写Promise
+# 手写 Promise
 
 其实，看到这里说明你已经掌握了几乎全部关键概念了。剩下的任务就是将这些逻辑翻译成代码。
 

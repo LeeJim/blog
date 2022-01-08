@@ -1,12 +1,20 @@
 ---
 title: 自定义tabbar
-tags: 小程序
+tags: 
+- 小程序
+- 自定义组件
 desc: 小程序如何自定义tabbar
+toc: true
+categories:
+- 小程序
+date: 2020-3-29
 ---
 
 ## 前言
 
 由于打算在首页全屏展示壁纸，但是首页属于tabbar页面之一，会被底部的tabbar遮挡一部分。
+
+<!-- more -->
 
 因此要考虑使用新特性：自定义tabbar。可以看下前后效果对比：
 

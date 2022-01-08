@@ -1,9 +1,12 @@
 ---
-title: CSS background
+title: CSS Background 基础知识
 date: 2015-10-17 16:05:26
 tags: 
 - CSS
 desc: CSS,background,background-size,background-clip,background-origin,background-position,background-attachment
+toc: true
+categories:
+- CSS
 ---
 
 WEB开发常用到`background`但是没有去深究，仔细看了之后，发现`background`里面的知识点还是挺多不懂的。
