@@ -109,6 +109,7 @@ navbar:
         Archives: /archives
         Categories: /categories
         Tags: /tags
+        Projects: /projects
         About: /about
     # Links to be shown on the right of the navigation bar
     links:
@@ -281,14 +282,14 @@ widgets:
         position: right
         type: tags
     # Google FeedBurner email subscription widget configurations
-    -
+    # -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: left
-        type: subscribe_email
+        # position: left
+        # type: subscribe_email
         # Hint text under the email input
-        description: 
+        # description: 
         # Feedburner ID
-        feedburner_id: ''
+        # feedburner_id: ''
     # Google AdSense unit configurations
     # -
         # Where should the widget be placed, left sidebar or right sidebar
@@ -299,16 +300,16 @@ widgets:
         # AdSense AD unit ID
         # slot_id: ''
     # Follow.it email subscription widget configurations
-    -
+    # -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: left
-        type: followit
+        # position: left
+        # type: followit
         # Hint text under the email input
-        description: 
+        # description: 
         # Subscription form action URL
-        action_url: ''
+        # action_url: ''
         # Feed claiming verification code
-        verification_code: ''
+        # verification_code: ''
 # Plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/
 plugins:
@@ -336,19 +337,6 @@ plugins:
         id: 
         # CNZZ website id
         web_id: 
-    # Alerting users about the use of cookies
-    # https://www.osano.com/cookieconsent/
-    cookie_consent:
-        # The compliance type. Can be "info", "opt-in", or "opt-out"
-        type: info
-        # Theme of the popup. Can be "block", "edgeless", or "classic"
-        theme: edgeless
-        # Whether the popup should stay static regardless of the page scrolls
-        static: false
-        # Where on the screen the consent popup should display
-        position: bottom-left
-        # URL to your site's cookie policy
-        policyLink: 'https://www.cookiesandyou.com/'
     # Enable the lightGallery and Justified Gallery plugins
     gallery: true
     # Google Analytics plugin settings
