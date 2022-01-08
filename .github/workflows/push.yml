@@ -26,8 +26,6 @@ jobs:
       - name: Install & Build blog
         run: |
           npm i
-          npm install hexo-theme-icarus
-          npx hexo config theme icarus
           npm run build
       # 使用云开发 Github Action 部署
       - name: Deploy static to Tencent CloudBase
