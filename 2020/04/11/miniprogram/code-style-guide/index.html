@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>编码规范的一些思考 - Jim Home</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="leejimqiu"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="leejimqiu"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="引言古人常说，无规矩不成方圆。在编程的世界里也同样如此。 从编程语言，到文件的命名，再上升到项目结构都可以提供相关的规范。 然而，规范的落地往往都会晚于项目的启动，因此每个团队都会有历史代码需要处理，这是工程师无法逾越，也是心中无法抹去的痛苦。"><meta property="og:type" content="blog"><meta property="og:title" content="编码规范的一些思考"><meta property="og:url" content="http://africans.cn/2020/04/11/miniprogram/code-style-guide/"><meta property="og:site_name" content="Jim Home"><meta property="og:description" content="引言古人常说，无规矩不成方圆。在编程的世界里也同样如此。 从编程语言，到文件的命名，再上升到项目结构都可以提供相关的规范。 然而，规范的落地往往都会晚于项目的启动，因此每个团队都会有历史代码需要处理，这是工程师无法逾越，也是心中无法抹去的痛苦。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://africans.cn/images/code-guide/eslint.png"><meta property="og:image" content="http://africans.cn/images/code-guide/htmlhint.png"><meta property="og:image" content="http://africans.cn/images/code-guide/stylelint.png"><meta property="og:image" content="http://africans.cn/images/code-guide/protect-branch.png"><meta property="og:image" content="http://africans.cn/images/code-guide/merge-request.png"><meta property="article:published_time" content="2020-04-11T16:00:00.000Z"><meta property="article:modified_time" content="2022-01-08T06:08:21.444Z"><meta property="article:author" content="leejimqiu"><meta property="article:tag" content="编码规范"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/code-guide/eslint.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://africans.cn/2020/04/11/miniprogram/code-style-guide/"},"headline":"编码规范的一些思考","image":["http://africans.cn/images/code-guide/eslint.png","http://africans.cn/images/code-guide/htmlhint.png","http://africans.cn/images/code-guide/stylelint.png","http://africans.cn/images/code-guide/protect-branch.png","http://africans.cn/images/code-guide/merge-request.png"],"datePublished":"2020-04-11T16:00:00.000Z","dateModified":"2022-01-08T06:08:21.444Z","author":{"@type":"Person","name":"leejimqiu"},"publisher":{"@type":"Organization","name":"Jim Home","logo":{"@type":"ImageObject","url":"http://africans.cn/img/logo.svg"}},"description":"引言古人常说，无规矩不成方圆。在编程的世界里也同样如此。 从编程语言，到文件的命名，再上升到项目结构都可以提供相关的规范。 然而，规范的落地往往都会晚于项目的启动，因此每个团队都会有历史代码需要处理，这是工程师无法逾越，也是心中无法抹去的痛苦。"}</script><link rel="canonical" href="http://africans.cn/2020/04/11/miniprogram/code-style-guide/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?6638f74329d0f52c5cdafdadb58010af";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Jim Home" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/projects">Projects</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/leejim"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-04-11T16:00:00.000Z" title="4/11/2020, 4:00:00 PM">2020-04-12</time>发表</span><span class="level-item"><time dateTime="2022-01-08T06:08:21.444Z" title="1/8/2022, 6:08:21 AM">2022-01-08</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a></span><span class="level-item">12 分钟读完 (大约1827个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">编码规范的一些思考</h1><div class="content"><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>古人常说，无规矩不成方圆。在编程的世界里也同样如此。</p>
+<p>从编程语言，到文件的命名，再上升到项目结构都可以提供相关的规范。</p>
+<p>然而，规范的落地往往都会晚于项目的启动，因此每个团队都会有历史代码需要处理，这是工程师无法逾越，也是心中无法抹去的痛苦。</p>
+<span id="more"></span>
+
+<h2 id="现实"><a href="#现实" class="headerlink" title="现实"></a>现实</h2><p>在笔者呆过的团队，似乎都在重蹈覆辙：</p>
+<ul>
+<li>一开始不重视文档、规范，快速启动，敏捷开发</li>
+<li>等团队日益壮大，开始制定规范，而此时已经存在大量的历史遗留的问题代码</li>
+<li>由于团队会有些人员变动，因此会出现一些无人认领的孤儿代码</li>
+</ul>
+<p>如此往复，无形中浪费了许多因修复历史代码而产生的工作量。</p>
+<p>笔者认为，有可能是以下几种原因导致这种现象：</p>
+<ul>
+<li>团队早期人员少，项目急，人力不足</li>
+<li>前端开发仍不够成熟，没可落地的完整方案</li>
+<li>经验不足，无法意识到规范的重要性</li>
+</ul>
+<h2 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h2><p>我们常说的代码规范属于编码规范的子集。</p>
+<p>笔者理解的编码规范包括一下几种：</p>
+<ul>
+<li>代码规范</li>
+<li>文件规范</li>
+<li>项目结构规范</li>
+</ul>
+<p>其中，<strong>代码规范</strong> 并不是编写有效的代码硬性规定，而是统一代码风格、避免出错的最佳实践。</p>
+<p>代码规范往往含有主观性（比如在JavaScript是否需要分号），孰是孰非可以讨论很久，因此建议小范围投票，快速决定，坚决执行即可。</p>
+<p><strong>文件规范</strong> 则包含：文件的命名规范，以及文件的类型规范（如图片）。</p>
+<p><strong>项目结构规范</strong> 是规范化项目的结构，有利于项目的可读性。</p>
+<p>由于篇幅有限，文本将主要阐述 <strong>代码规范</strong> 的制定与落地实施。</p>
+<h2 id="前端的特殊性"><a href="#前端的特殊性" class="headerlink" title="前端的特殊性"></a>前端的特殊性</h2><p>若是其他岗位，可能就涉及一种编程语言，因此确定一种代码规范即可。</p>
+<p>但是前端，涉及到编程语言相对较多，并且不同框架或者runtime也可能导致不同的语法风格，因此需要覆盖的规范也比较多：</p>
+<ul>
+<li>编程语言：JavaScript、CSS、HTML</li>
+<li>框架：Vue、React、Angular</li>
+<li>runtime：Node.js、小程序、浏览器</li>
+<li>语法糖：CoffeeScript、TypeScript</li>
+</ul>
+<p>其中JavaScript是一种极度灵活，约束较少，弱类型的动态编程语言，也是前端开发的主要语言。如果不对编码的风格做一定的约束，必然出现千差万别的风格，虽然都是正确可执行的代码，但这会让代码的可阅读性非常差。</p>
+<p>上述的runtime和语法糖都是针对于<code>JavaScript</code>而言，因此确定<code>JavsScript</code>的代码规范是首要任务。</p>
+<blockquote>
+<p>最好的结果就是每个人写得代码都是一样的。</p>
+</blockquote>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>导致团队的代码规范难以指定的一个很大原因就是无法快速开始。</p>
+<p>因此笔者提供一种思路：工具驱动规范(Tool Drive Specification)</p>
+<p>通过现有的代码检测工具，反向推到出代码的规范，即有可实施的检测工具，又有了现成的文档，一举两得。</p>
+<p>对于<code>JavaScript</code>来说，最强力的代码分析检测工具非<code>ESLint</code>莫属，其涵盖了代码质量和编码风格的检测。</p>
+<h3 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint"></a>ESLint</h3><p><img src="/images/code-guide/eslint.png"></p>
+<p>ESLint官方有提供一个推荐方案，通过配置文件<code>.eslintrc</code>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;extends&quot;</span>: <span class="string">&quot;eslint:recommended&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者采用业界比较出名的公司规范也可以，比如：Google、Airbnb。</p>
+<p>使用<code>ESlint --init</code>即可开启交互式初始化ESLint配置。</p>
+<p>对于不同的runtime、语法糖和框架而言，都可以使用ESLint作为检测工具，其中的差异则是需要依赖不同的第三方插件来扩展检测能力。以下以团队的首选框架<code>Vue</code>举例说明：</p>
+<p><code>Vue</code>官方提供了ESLint的插件：<a target="_blank" rel="noopener" href="https://eslint.vuejs.org/">eslint-plugin-vue</a></p>
+<p>通过此插件，可以利用ESLint检测<code>.vue</code>文件的<code>&lt;template&gt;</code>和<code>&lt;script&gt;</code>模块，检测语法错误，以及编码风格。同样地，插件也有推荐的配置：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;extends&quot;</span>: <span class="string">&quot;plugin:vue/vue3-recommended&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;rules&quot;</span>: &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>另外，可以在<code>rules</code>里覆盖推荐的规范</p>
+</blockquote>
+<p>执行检测：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx eslint **/*.&#123;js,vue&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="HTMLHint"><a href="#HTMLHint" class="headerlink" title="HTMLHint"></a>HTMLHint</h3><p><img src="/images/code-guide/htmlhint.png"></p>
+<p>因为<code>HTML</code>不算真正的编程语言，而是标记语言，因此可以检测的规范不会太多，因此可以手动梳理一便，同时也支持自定义规则。全部的规则：<a target="_blank" rel="noopener" href="https://github.com/htmlhint/HTMLHint/wiki/Rules">HTMLHint Rules</a></p>
+<p>通过配置文件<code>.htmlhintrc</code>配置，默认配置如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">&quot;tagname-lowercase&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;attr-lowercase&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;attr-value-double-quotes&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;doctype-first&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;tag-pair&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;spec-char-escape&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;id-unique&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;src-not-empty&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;attr-no-duplication&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;title-require&quot;</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行检测：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx htmlhint **/*.html</span><br></pre></td></tr></table></figure>
+
+<h3 id="stylelint"><a href="#stylelint" class="headerlink" title="stylelint"></a>stylelint</h3><p><img src="/images/code-guide/stylelint.png"></p>
+<p><code>stylelint</code>是<code>CSS</code>的代码分析工具，类似于<code>ESLint</code>，<code>stylelint</code>也提供了 **标准配置(standard configuration)**，安装方式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev stylelint stylelint-config-standard</span><br></pre></td></tr></table></figure>
+
+<p>在项目根目录创建配置文件<code>.stylelintrc.json</code>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;extends&quot;</span>: <span class="string">&quot;stylelint-config-standard&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行检测：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx stylelint <span class="string">&quot;**/*.css&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="实施方案"><a href="#实施方案" class="headerlink" title="实施方案"></a>实施方案</h2><p>如果只是制定的代码规范文档，但是没有可实施方案，依靠人为的自觉，必然出现不遵守规则的漏网之鱼。因此，必须落地实施方案，拒绝不符合规范的代码合入代码仓库。以<code>GitLab</code>举例：</p>
+<p>每个仓库均可设置多个分支，在<code>GitLab</code>上对关键分支（比如<code>master</code>）的权限做严格把控，比如：</p>
+<ul>
+<li>不允许任何人直接push到关键分支（Allowed to push: No one)</li>
+</ul>
+<p><img src="/images/code-guide/protect-branch.png"></p>
+<ul>
+<li>仅允许通过pipeline的 <strong>合并请求(merge requests)</strong> 进行合并</li>
+</ul>
+<p><img src="/images/code-guide/merge-request.png"></p>
+<p>最后在pipeline中添加一个Job：执行以上检测脚本。如果代码有不符合规范，则会直接报错从而终止代码继续合并。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>编码规范的重要性在团队建设的前期，往往容易被忽略，带来的后果是需要消耗更多的时间去掩埋一开始挖的坑。并且在无规范的混沌时期，不同的代码风格导致的代码可读性下降，会无形中加重了开发的负担，降低了开发效率。</p>
+<p>另外，需要切记的是，规范文档的落地不一定需要正式的<code>word</code>格式，<code>markdown</code>、<code>html</code>乃至于配置文件的格式都是可以接受的。重要的是代码规范有落地的检测工具。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>编码规范的一些思考</p><p><a href="http://africans.cn/2020/04/11/miniprogram/code-style-guide/">http://africans.cn/2020/04/11/miniprogram/code-style-guide/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>leejimqiu</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2020-04-12</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-01-08</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/">编码规范</a></div><div class="sharethis-inline-share-buttons"></div><script src="africans.cn" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" href="//buymeacoffee.com/leejim" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>送我杯咖啡</span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/04/26/miniprogram/update/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">自动更新机制</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/04/07/miniprogram/thinking-about-components/"><span class="level-item">组件封装的思考</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'http://africans.cn/2020/04/11/miniprogram/code-style-guide/';
+            this.page.identifier = '2020/04/11/miniprogram/code-style-guide/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'leejim' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#引言"><span class="level-left"><span class="level-item">1</span><span class="level-item">引言</span></span></a></li><li><a class="level is-mobile" href="#现实"><span class="level-left"><span class="level-item">2</span><span class="level-item">现实</span></span></a></li><li><a class="level is-mobile" href="#范围"><span class="level-left"><span class="level-item">3</span><span class="level-item">范围</span></span></a></li><li><a class="level is-mobile" href="#前端的特殊性"><span class="level-left"><span class="level-item">4</span><span class="level-item">前端的特殊性</span></span></a></li><li><a class="level is-mobile" href="#快速开始"><span class="level-left"><span class="level-item">5</span><span class="level-item">快速开始</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#ESLint"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">ESLint</span></span></a></li><li><a class="level is-mobile" href="#HTMLHint"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">HTMLHint</span></span></a></li><li><a class="level is-mobile" href="#stylelint"><span class="level-left"><span class="level-item">5.3</span><span class="level-item">stylelint</span></span></a></li></ul></li><li><a class="level is-mobile" href="#实施方案"><span class="level-left"><span class="level-item">6</span><span class="level-item">实施方案</span></span></a></li><li><a class="level is-mobile" href="#总结"><span class="level-left"><span class="level-item">7</span><span class="level-item">总结</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Jim Home" height="28"></a><p class="is-size-7"><span>&copy; 2023 leejimqiu</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/leejim"><i class="fab fa-github"></i></a></p><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="粤ICP备19015289号" href="https://beian.miit.gov.cn">粤ICP备19015289号</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
