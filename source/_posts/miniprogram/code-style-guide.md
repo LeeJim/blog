@@ -81,7 +81,7 @@ date: 2020-4-12
 
 ### ESLint
 
-![](/images/code-guide/eslint.png)
+![](images/code-guide/eslint.png)
 
 ESLint官方有提供一个推荐方案，通过配置文件`.eslintrc`：
 
@@ -120,7 +120,7 @@ npx eslint **/*.{js,vue}
 
 ### HTMLHint
 
-![](/images/code-guide/htmlhint.png)
+![](images/code-guide/htmlhint.png)
 
 因为`HTML`不算真正的编程语言，而是标记语言，因此可以检测的规范不会太多，因此可以手动梳理一便，同时也支持自定义规则。全部的规则：[HTMLHint Rules](https://github.com/htmlhint/HTMLHint/wiki/Rules)
 
@@ -149,7 +149,7 @@ npx htmlhint **/*.html
 
 ### stylelint
 
-![](/images/code-guide/stylelint.png)
+![](images/code-guide/stylelint.png)
 
 `stylelint`是`CSS`的代码分析工具，类似于`ESLint`，`stylelint`也提供了 **标准配置(standard configuration)**，安装方式：
 
@@ -179,11 +179,11 @@ npx stylelint "**/*.css"
 
 - 不允许任何人直接push到关键分支（Allowed to push: No one)
 
-![](/images/code-guide/protect-branch.png)
+![](images/code-guide/protect-branch.png)
 
 - 仅允许通过pipeline的 **合并请求(merge requests)** 进行合并
 
-![](/images/code-guide/merge-request.png)
+![](images/code-guide/merge-request.png)
 
 最后在pipeline中添加一个Job：执行以上检测脚本。如果代码有不符合规范，则会直接报错从而终止代码继续合并。
 

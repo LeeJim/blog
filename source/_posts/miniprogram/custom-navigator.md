@@ -16,13 +16,13 @@ date: 2020-5-6
 
 > 自定义导航栏：下图黑色部分导航栏不再默认显示，从而整个手机页面都成为小程序的渲染区域
 
-![](/images/custom-navigator/interface.jpg)
+![](images/custom-navigator/interface.jpg)
 
 ## 作用
 
 最大的作用就是可以全屏展示，如我的小程序可以展示壁纸的真实效果，不再受导航栏限制。
 
-![](/images/custom-navigator/full-screen.jpeg)
+![](images/custom-navigator/full-screen.jpeg)
 
 其次，可以客制化导航栏，如在后退按钮旁，新增别的按钮，也可以实现后退监听。
 
@@ -32,7 +32,7 @@ date: 2020-5-6
 
 由于开启自定义导航栏之后，全屏界面可渲染，因此如果要客制化导航栏的话，需要知道导航栏的布局信息。
 
-![](/images/custom-navigator/navigator.jpg)
+![](images/custom-navigator/navigator.jpg)
 
 如上图所示，以Android为例。较深色部分为 **状态栏(statusBar)**，可以通过`wx.getSystemInfo`获取系统信息，其中的`statusBarHeight`即是状态栏的高度。
 

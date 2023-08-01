@@ -18,7 +18,7 @@ date: 2020-3-29
 
 因此要考虑使用新特性：自定义tabbar。可以看下前后效果对比：
 
-![](/images/compare.jpg)
+![](images/compare.jpg)
 
 ## 分析
 

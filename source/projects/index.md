@@ -41,13 +41,13 @@ VSCode 插件，用于小程序开发，提供了一些自己想要的功能
 
 通过爬虫，将知乎上热门答案里的壁纸信息挖掘出来。
 
-![](/images/qrcode/wallpaper.jpg)
+![](images/qrcode/wallpaper.jpg)
 
 ### 天气号
 
 初次尝试云开发，通过第三方API获取天气信息。
 
-![](/images/qrcode/weather.jpg)
+![](images/qrcode/weather.jpg)
 
 ***
 

@@ -21,7 +21,7 @@ categories:
 
 首先，先看下小程序的运行机制：
 
-![](/images/update/work-flow.png)
+![](images/update/work-flow.png)
 
 与APP的概念有些类似，初次打开即为冷启动，若启动之后，在被系统回收之前再次打开，则称之为热启动。
 
@@ -66,7 +66,7 @@ updateManager.onUpdateFailed(function () {
 
 根据微信提供的能力，小程序的更新流程大致如下：
 
-![](/images/update/update-logic.jpg)
+![](images/update/update-logic.jpg)
 
 由于官方API没有提供主动下载新版本小程序的能力，仅提供了检测的能力。因此，当新版本下载失败时，没法主动触发重试，只能让用户继续访问旧版本的小程序。
 
@@ -86,7 +86,7 @@ updateManager.onUpdateFailed(function () {
 
 另外，开发者工具的编译模式提供模拟更新：
 
-![](/images/update/mock-update.jpg)
+![](images/update/mock-update.jpg)
 
 ## 兼容处理
 

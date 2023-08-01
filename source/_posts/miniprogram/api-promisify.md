@@ -62,7 +62,7 @@ for (let name of props) {
 
 尝试封装之后，发现报错了。因为`wx.drawCanvas`只有`getter`没有`setter`，无法给它赋值。相当于这个方法是`readonly`。
 
-![](/images/promisify-error1.jpg)
+![](images/promisify-error1.jpg)
 
 既然存在没有`setter`的方法，那么我看有多少方法是有`setter`的：
 
@@ -75,7 +75,7 @@ Object.keys(wx).filter(name => {
 
 结果是`[]`，相当于无法改变`wx`对象的每个属性值。
 
-![](/images/promisify-console1.jpg)
+![](images/promisify-console1.jpg)
 
 ### 复制模式
 

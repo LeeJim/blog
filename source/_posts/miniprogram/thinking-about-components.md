@@ -23,7 +23,7 @@ categories:
 
 因为通过组件封装，可以将页面拆分成多个组件，因此较大粒度的页面就被拆分成粒度较小的组件。当一些数据发生变更导致页面变化时，就只需要重新渲染包含该数据的组件即可，而不用渲染整个页面，从而达到了提高渲染性能的效果
 
-![](/images/components/components-graph.png)
+![](images/components/components-graph.png)
 
 ## 生命周期
 
@@ -33,7 +33,7 @@ categories:
 
 > 命名风格都不一致，真是让人头大
 
-![](/images/components/miniprogram-lifecycle.png)
+![](images/components/miniprogram-lifecycle.png)
 
 ## 数据传递
 
@@ -45,7 +45,7 @@ categories:
 
 为了解决这个问题，`Vue` 推出了 `Vuex` 这样的状态管理工具，集中式存储、管理应用的所有组件的状态。并提出了“单向数据流”的理念：
 
-![](/images/components/vuex.png)
+![](images/components/vuex.png)
 
 ### 小程序
 
