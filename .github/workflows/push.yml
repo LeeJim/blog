@@ -2,6 +2,7 @@ on: [push] # push 代码时触发
 
 jobs:
   deploy:
+    if: false
     runs-on: ubuntu-latest
     name: Deploy Hexo Blog
     steps:
