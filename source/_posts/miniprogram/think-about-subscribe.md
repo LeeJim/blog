@@ -36,7 +36,7 @@ date: 2020-5-16
 
 **订阅消息** 与 **模板消息** 相比较，明显的优势：用户对自己将收到的模板消息类型有一定的预期，如：
 
-![](images/subscribe/request-subscribe-message.jpg)
+![](/blog/images/subscribe/request-subscribe-message.jpg)
 
 另外，**对订阅消息的发送时限不做限制**，即可以在任意时间给用户发送一条模板消息，而不像以前的`formId`有7天的有效期。
 
@@ -103,13 +103,13 @@ Page({
 
 另外每次发起消息订阅，都会有弹窗出现：
 
-![](images/subscribe/WechatIMG198.jpg)
+![](/blog/images/subscribe/WechatIMG198.jpg)
 
 用户可以勾选“总是保持以上选择，不再询问”，这样下次点击时，就直接授权订阅。
 
 若此后希望小程序重新出现弹框，则是没有办法的。只能在设置页里取消单个订阅消息，或者关闭接收所有订阅消息：
 
-![](images/subscribe/WechatIMG199.jpg)
+![](/blog/images/subscribe/WechatIMG199.jpg)
 
 其实就等于将这些设置转移到更深的路径上，但还是保留了用户取消订阅的权利。
 

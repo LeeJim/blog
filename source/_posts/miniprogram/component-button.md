@@ -14,11 +14,11 @@ TDesign 的 button 是之前的同事开发的，我接手过来只是做了样�
 
 将 disabled 透传至 button 之后，就发现 user agent 的样式权重很高：
 
-![小程序最终样式](images/miniprogram/user-agent.png)
+![小程序最终样式](/blog/images/miniprogram/user-agent.png)
 
 这其实是小程序的坑。按理说 user agent stylesheet 的优先级肯定比 user stylesheet 低才合理的:
 
-![CSS 层叠样式优先级](images/miniprogram/css-cascade.png)
+![CSS 层叠样式优先级](/blog/images/miniprogram/css-cascade.png)
 
 这明显是不讲武德了，但问题还是要解决。为了样式的正确还原，有两个解决方案：
 
@@ -75,7 +75,7 @@ Page({
 
 这个问题也是比较典型的事件模型问题：
 
-![事件模型图](images/miniprogram/eventflow.svg)
+![事件模型图](/blog/images/miniprogram/eventflow.svg)
 
 因此，需要通过 catch 事件来捕获 tap 事件，避免冒泡：
 

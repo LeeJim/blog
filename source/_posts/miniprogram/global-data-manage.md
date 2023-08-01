@@ -15,7 +15,7 @@ categories:
 
 小程序的底层也是通过Web实现的，因此同样存在`window`对象，但是微信团队做了些处理：
 
-![](images/global-window.png)
+![](/blog/images/global-window.png)
 
 微信团队将`window`设置成了`writable:false`，且值也为`undefined`。
 
@@ -27,7 +27,7 @@ categories:
 
 虽然`window`是只读的，但是`global`是可写的:
 
-![](images/global-global.png)
+![](/blog/images/global-global.png)
 
 因此常见的做法，就是将需要全局访问的变量都保存到`global`下，间接声明了全局变量。
 
@@ -99,7 +99,7 @@ global[health] = {}
 
 > 由于 `Symbol` 属于新特性，因此需要关注下兼容性
 
-![](images/compatibility-symbol.jpg)
+![](/blog/images/compatibility-symbol.jpg)
 
 ### 管理声明
 
@@ -126,7 +126,7 @@ global = new Proxy(global, {
 
 > 由于 `Proxy` 属于新特性，因此需要关注下兼容性
 
-![](images/compatibility-proxy.jpg)
+![](/blog/images/compatibility-proxy.jpg)
 
 ## 总结
 
