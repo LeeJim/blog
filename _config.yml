@@ -6,7 +6,7 @@
 title: Jim Home
 subtitle: ''
 description: '技术博客，前端开发，微信小程序，VSCode'
-keywords: leejimqiu,
+keywords: leejimqiu,丘利俊,leejim,小程序,前端开发,博客
 author: leejimqiu
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -15,7 +15,7 @@ timezone: 'Asia/Shanghai'
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://leejim.github.io/blog
 root: /blog/
-permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -33,6 +33,7 @@ skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
+auto_spacing: true
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
