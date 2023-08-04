@@ -1,5 +1,5 @@
 ---
-title: 自定义tabbar
+title: 小程序中实现自定义标签栏
 tags: 
 - 小程序
 - 自定义组件

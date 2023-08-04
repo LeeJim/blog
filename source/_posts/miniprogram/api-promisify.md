@@ -1,5 +1,5 @@
 ---
-title: API Promise化
+title: 如何将小程序的 API Promise 化
 tags: 
 - 小程序
 desc: 小程序如何将异步调用转成Promise调用

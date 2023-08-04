@@ -6,5 +6,5 @@ widgets:
     position: right
     type: toc
     index: true
-    collapsed: true
+    collapsed: false
     depth: 3

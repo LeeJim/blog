@@ -1,5 +1,5 @@
 ---
-title: 如果使用Node.js的Buffers
+title: 如果使用 Node.js 的 Buffers
 date: 2017-10-06 17:14:44
 tags: 
 - Node.js
@@ -8,16 +8,15 @@ desc:
 from: https://docs.nodejitsu.com/articles/advanced/buffers/how-to-use-buffers/
 toc: true
 categories:
-- Node.js
+- [Node.js]
+- 译文
 ---
 
-# 为什么要有Buffers？
+在纯 `JavaScript` 开发中，unicode 编码的字符串也够好用的了，并不需要直接处理二进制数据(straight binary data)。在浏览器环境，大部分数据都是字符串的形式，这是足够的。然而，Node.js 是服务器环境，必须要处理 TCP 流还有文件系统的读取和写入流，这就让 `JavaScript` 需要处理纯二进制数据了。
 
-在纯`JavaScript`开发中，unicode编码的字符串也够好用的了，并不需要直接处理二进制数据(straight binary data)。在浏览器环境，大部分数据都是字符串的形式，这是足够的。然而，Node.js是服务器环境，必须要处理TCP流还有文件系统的读取和写入流，这就让`JavaScript`需要处理纯二进制数据了。
+其实，要解决这个问题直接使用字符串也是可以的，这也是 Node.js 一开始的做法。然而，这样的做法有许多问题，也很慢。
 
-其实，要解决这个问题直接使用字符串也是可以的，这也是Node.js一开始的做法。然而，这样的做法有许多问题，也很慢。
-
-所以，记住了，别使用二进制字符串(binary strings)，用**buffers**代替它！
+所以，记住了，别使用二进制字符串(binary strings)，用 **buffers** 代替它！
 
 <!-- more -->
 
